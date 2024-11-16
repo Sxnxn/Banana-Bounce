@@ -22,20 +22,22 @@ include '../Controller/updateHandler.php';
     <link rel="stylesheet" href="../Static Assets/css/style.css" type="text/css">
     <script src="../Static Assets/js/bgAudio.js"></script>
 
-    <title>QUEEZY BUNCH</title>
+    <title>BANANA BOUNCE</title>
 </head>
 
 <body>
     <div class="image-container">
         <nav class="navbar">
-            <h1 class="logo">BANANA BOUNCE</h1>
+            <a href="index.php" class="logo">
+                <img src="../Static Assets/images/logo.png" alt="BANANA BOUNCE Logo" class="logo-img">
+            </a>
             <div class="links">
-                <?php if($_SESSION['loggedIn']){ ?>
-                  <a href="profile.php">Hi, <?=$_SESSION['user_name'];?></a>
+                <?php if ($_SESSION['loggedIn']) { ?>
+                    <a href="profile.php">Hi, <?= $_SESSION['user_name']; ?></a>
                 <?php } ?>
-                <a href="index.php"><i class="bi bi-house custom-icon"></i></i></a>
-                <a href="scores.php"><i class="bi bi-123 custom-icon"></i></a>
-                <a href="../Controller/logout.php"><i class="bi bi-power custom-icon"></i></a>
+                <a href="index.php">HOME</a>
+                <a href="scores.php">SCORE BOARD</a>
+                <a href="../Controller/logout.php">LOG OUT</a>
                 <button class="" id="mutebtn"><i class="bi bi-volume-up-fill"></i></button>
             </div>
         </nav>
@@ -44,24 +46,25 @@ include '../Controller/updateHandler.php';
                 <div class="profileform-wrapper">
                     <h1 class="text-center">My Profile</h1>
                     <form class="profileform-align" method="post">
-                    <div class="profileform-group">
-                        <label for="fullName">Full Name :</i></label>
-                        <input type="text" class="input-field" id="updatefullName" name="updatefullName" required value="<?= $row['fullName'] ?>">
-                    </div>
-                    <div class="profileform-group">
-                        <label for="age">Age :</i></label>
-                        <input type="number" class="input-field" id="updateage" name="updateage" min="0" required value="<?= $row['age'] ?>">
-                    </div>
-                    <div class="profileform-group">
-                        <label for="age">Current Password :</i></label>
-                        <input type="password" class="input-field" id="currentPassword" name="currentPassword" min="0" required>
-                    </div>        <div class="profileform-group">
-                        <label for="age">New Password :</i></label>
-                        <input type="password" class="input-field" id="newPassword" name="newPassword" min="0" required>
-                    </div>
-                    <div class="text-center">
-                        <button class="updateformbtn" type="submit" id="updateformbtn" name="updatebtn">Update</button> <br><br>
-                    </div>   
+                        <div class="profileform-group">
+                            <label for="fullName">Full Name :</i></label>
+                            <input type="text" class="input-field" id="updatefullName" name="updatefullName" required value="<?= $row['fullName'] ?>">
+                        </div>
+                        <div class="profileform-group">
+                            <label for="age">Age :</i></label>
+                            <input type="number" class="input-field" id="updateage" name="updateage" min="0" required value="<?= $row['age'] ?>">
+                        </div>
+                        <div class="profileform-group">
+                            <label for="age">Current Password :</i></label>
+                            <input type="password" class="input-field" id="currentPassword" name="currentPassword" min="0" required>
+                        </div>
+                        <div class="profileform-group">
+                            <label for="age">New Password :</i></label>
+                            <input type="password" class="input-field" id="newPassword" name="newPassword" min="0" required>
+                        </div>
+                        <div class="text-center">
+                            <button class="updateformbtn" type="submit" id="updateformbtn" name="updatebtn">Update</button> <br><br>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -71,4 +74,5 @@ include '../Controller/updateHandler.php';
         <source type="audio/mp3" src="../Static Assets/assets/audio/bg_music.mp3">
     </audio>
 </body>
+
 </html>

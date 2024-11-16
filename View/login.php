@@ -15,7 +15,6 @@ include '../Controller/loginHandler.php';
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
     <link rel="stylesheet" href="../Static Assets/css/style.css" type="text/css">
@@ -68,10 +67,9 @@ include '../Controller/loginHandler.php';
     </div>
 
     <nav class="navbar">
-        <h1 class="logo">BANANA BOUNCE</h1>
-        <div class="links">
-            <button class="" id="mutebtn"><i class="bi bi-volume-up-fill"></i></button>
-        </div>
+        <a href="index.php" class="logo">
+            <img src="../Static Assets/images/logo.png" alt="BANANA BOUNCE Logo" class="logo-img">
+        </a>
     </nav>
 
     <div class="container">
@@ -102,15 +100,5 @@ include '../Controller/loginHandler.php';
         <source type="audio/mp3" src="../Static Assets/assets/audio/bg_music.mp3">
     </audio>
 </body>
-<!-- <script> -->
-        // GSAP Jelly Animation
-        gsap.to("#formWrapper", {
-            scaleX: 1.1,
-            scaleY: 0.9,
-            repeat: -1, // Infinite loop
-            yoyo: true, // Reverse animation
-            duration: 0.6, // Animation duration
-            ease: "elastic.inOut(1, 0.3)" // Smooth "jelly" effect
-        });
-    </script>
+
 </html>

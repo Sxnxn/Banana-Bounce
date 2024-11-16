@@ -17,7 +17,7 @@ if (!$_SESSION['loggedIn']) {
     <link rel="stylesheet" href="../Static Assets/css/style.css" type="text/css">
     <script src="../Static Assets/js/bgAudio.js"></script>
 
-    <title>QUEEZY BUNCH</title>
+    <title>BANANA BOUNCE</title>
     <style>
         .video-container {
             position: fixed;
@@ -76,6 +76,18 @@ if (!$_SESSION['loggedIn']) {
                 transform: translate(-50%, -50%) scale(1.2);
             }
         }
+
+        #carouselExampleControls {
+            width: 80%;
+            max-width: 900px;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        .carousel-inner img {
+            max-height: 450px;
+            object-fit: contain;
+        }
     </style>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -110,36 +122,37 @@ if (!$_SESSION['loggedIn']) {
 
 
     <nav class="navbar">
-        <h1 class="logo">BANANA BOUNCE</h1>
+        <a href="index.php" class="logo">
+            <img src="../Static Assets/images/logo.png" alt="BANANA BOUNCE Logo" class="logo-img">
+        </a>
         <div class="links">
             <?php if ($_SESSION['loggedIn']) { ?>
                 <a href="profile.php">Hi, <?= $_SESSION['user_name']; ?></a>
             <?php } ?>
-            <a href="scores.php"><i class="bi bi-123 custom-icon"></i></a>
-            <a href="index.php"><i class="bi bi-house custom-icon"></i></a>
-            <a href="../Controller/logout.php"><i class="bi bi-person-walking custom-icon"></i></a>
+            <a href="index.php">HOME</a>
+            <a href="scores.php">SCORE BOARD</a>
+            <a href="../Controller/logout.php">LOG OUT</a>
             <button class="" id="mutebtn"><i class="bi bi-volume-up-fill"></i></button>
         </div>
     </nav>
 
     <div class="container">
-
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="../Static Assets/assets/images/instructions/step1.jpg" class="d-block w-100" alt="...">
+                    <img src="../Static Assets/assets/images/instructions/Vector.png" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="../Static Assets/assets/images/instructions/step2.jpg" class="d-block w-100" alt="...">
+                    <img src="../Static Assets/assets/images/instructions/Vector-1.png" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="../Static Assets/assets/images/instructions/step3.jpg" class="d-block w-100" alt="...">
+                    <img src="../Static Assets/assets/images/instructions/Vector-3.png" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="../Static Assets/assets/images/instructions/step4.jpg" class="d-block w-100" alt="...">
+                    <img src="../Static Assets/assets/images/instructions/Vector-2.png" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="../Static Assets/assets/images/instructions/step5.jpg" class="d-block w-100" alt="...">
+                    <img src="../Static Assets/assets/images/instructions/Vector-4.png" class="d-block w-100" alt="...">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -151,7 +164,7 @@ if (!$_SESSION['loggedIn']) {
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
-        <a href="singlePlayer.php?new=true">
+        <a href="gameView.php?new=true">
             <img src="../Static Assets/assets/images/playbtn.png" alt="Start Playing" class="animated-image" />
         </a>
     </div>

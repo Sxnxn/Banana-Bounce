@@ -1,7 +1,7 @@
 <?php
 
 include '../Controller/config.php';
-if(!$_SESSION['loggedIn']){
+if (!$_SESSION['loggedIn']) {
     redirect("login.php");
 }
 ?>
@@ -18,17 +18,22 @@ if(!$_SESSION['loggedIn']){
     <link rel="stylesheet" href="../Static Assets/css/style.css" type="text/css">
     <script src="../Static Assets/js/bgAudio.js"></script>
 
-    <title>QUEEZY BUNCH</title>
+    <title>BANANA BOUNCE</title>
 </head>
 
 <body>
     <div class="image-container">
         <nav class="navbar">
-            <h1 class="logo">BANANA BOUNCE</h1>
+            <a href="index.php" class="logo">
+                <img src="../Static Assets/images/logo.png" alt="BANANA BOUNCE Logo" class="logo-img">
+            </a>
             <div class="links">
+                <?php if ($_SESSION['loggedIn']) { ?>
+                    <a href="profile.php">Hi, <?= $_SESSION['user_name']; ?></a>
+                <?php } ?>
+                <a href="index.php">HOME</a>
                 <a href="bestScored.php">BEST SCORED !</a>
-                <a href="index.php"><i class="bi bi-house custom-icon"></i></i></a>
-                <a href="../Controller/logout.php"><i class="bi bi-person-walking custom-icon"></i></a>
+                <a href="../Controller/logout.php">LOG OUT</a>
                 <button class="" id="mutebtn"><i class="bi bi-volume-up-fill"></i></button>
             </div>
         </nav>
@@ -36,32 +41,31 @@ if(!$_SESSION['loggedIn']){
             <div class="content">
                 <div class="profileform-wrapper">
                     <h1 class="text-center">SCORES</h1>
-
                     <table class="table">
                         <thead>
                             <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Player</th>
-                            <th scope="col">Score</th>
-                            <th scope="col">Time</th>
+                                <th scope="col">#</th>
+                                <th scope="col">Player</th>
+                                <th scope="col">Score</th>
+                                <th scope="col">Time</th>
                             </tr>
                         </thead>
                         <tbody>
-                        <?php 
-                        $sql = "SELECT * FROM `scores` ORDER BY `scores`.`id` DESC LIMIT 10";
-                        $scores = $conn->query($sql);
+                            <?php
+                            $sql = "SELECT * FROM `scores` ORDER BY `scores`.`id` DESC LIMIT 10";
+                            $scores = $conn->query($sql);
 
-                        foreach($scores as $score) { ?>
-                        <tr>
-                            <th scope="row"><?=$score['id'];?></th>
-                            <td><?=$score['playerID'];?></td>
-                            <td><?=$score['score'];?></td>
-                            <td><?=$score['datentime'];?></td>
-                        </tr>
-                        <?php } ?>
-                            
+                            foreach ($scores as $score) { ?>
+                                <tr>
+                                    <th scope="row"><?= $score['id']; ?></th>
+                                    <td><?= $score['playerID']; ?></td>
+                                    <td><?= $score['score']; ?></td>
+                                    <td><?= $score['datentime']; ?></td>
+                                </tr>
+                            <?php } ?>
+
                         </tbody>
-                        </table>
+                    </table>
 
 
                 </div>
@@ -72,4 +76,5 @@ if(!$_SESSION['loggedIn']){
         <source type="audio/mp3" src="../Static Assets/assets/audio/bg_music.mp3">
     </audio>
 </body>
+
 </html>

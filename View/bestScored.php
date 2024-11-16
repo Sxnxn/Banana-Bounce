@@ -1,7 +1,7 @@
 <?php
 
 include '../Controller/config.php';
-if(!$_SESSION['loggedIn']){
+if (!$_SESSION['loggedIn']) {
     redirect("login.php");
 }
 
@@ -25,16 +25,20 @@ $gameID = $result["id"];
     <link rel="stylesheet" href="../Static Assets/css/style.css" type="text/css">
     <script src="../Static Assets/js/bgAudio.js"></script>
 
-    <title>QUEEZY BUNCH</title>
+    <title>BANANA BOUNCE</title>
 </head>
 
 <body>
     <div class="image-container">
         <nav class="navbar">
-            <h1 class="logo">BANANA BOUNCE</h1>
+            <a href="index.php" class="logo">
+                <img src="../Static Assets/images/logo.png" alt="BANANA BOUNCE Logo" class="logo-img">
+            </a>
             <div class="links">
-                <a href="index.php"><i class="bi bi-house custom-icon"></i></i></a>
-                <a href="../Controller/logout.php"><i class="bi bi-person-walking custom-icon"></i></a>
+                <a href="gameView.php">PLAY AGAIN !</a>
+                <a href="index.php">HOME</a>
+                <a href="scores.php">SCORE BOARD</a>
+                <a href="../Controller/logout.php">LOG OUT</a>
                 <button class="" id="mutebtn"><i class="bi bi-volume-up-fill"></i></button>
             </div>
         </nav>
@@ -43,17 +47,18 @@ $gameID = $result["id"];
                 <div class="profileform-wrapper">
                     <h1 class="text-center">BEST SCORED !</h1>
                     <hr>
-                    <h4>Player : <?=$playerID;?></h4>
-                    <h4>Game ID : <?=$gameID;?></h4>
-                    <h4>Score : <?=$score;?></h4>
-                    <h4>Date : <?=$datentime;?></h4>
+                    <h4>Player : <?= $playerID; ?></h4>
+                    <h4>Game ID : <?= $gameID; ?></h4>
+                    <h4>Score : <?= $score; ?></h4>
+                    <h4>Date : <?= $datentime; ?></h4>
                 </div>
             </div>
         </div>
     </div>
-    
+
     <audio id="music">
         <source type="audio/mp3" src="../Static Assets/assets/audio/bg_music.mp3">
     </audio>
 </body>
+
 </html>

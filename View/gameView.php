@@ -28,10 +28,11 @@ if (isset($_GET['new'])) {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../Static Assets/css/player.css" type="text/css">
+    <link rel="stylesheet" href="../Static Assets/css/sweetAlertcustomize.css" type="text/css">
     <script src="../Static Assets/js/bgAudio.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    <title>QUEEZY BUNCH</title>
+    <title>BANANA BOUNCE</title>
     <script>
         let timeLeft = localStorage.getItem('timeLeft') || 45;
         let score = localStorage.getItem('score') || 0;
@@ -335,25 +336,26 @@ if (isset($_GET['new'])) {
             Your browser does not support the video tag.
         </video>
     </div>
-
     <nav class="navbar">
-        <h1 class="logo">BANANA BOUNCE</h1>
+        <a href="index.php" class="logo">
+            <img src="../Static Assets/images/logo.png" alt="BANANA BOUNCE Logo" class="logo-img">
+        </a>
         <div class="links">
-            <a href="index.php"><i class="bi bi-house custom-icon"></i></i></a>
-            <a href="scores.php"><i class="bi bi-123 custom-icon"></i></a>
-            <a href="profile.php"><i class="bi bi-person-fill custom-icon"></i></i></a>
-            <a href="../Controller/logout.php"><i class="bi bi-person-walking custom-icon"></i></a>
+            <?php if ($_SESSION['loggedIn']) { ?>
+                <a href="profile.php">Hi, <?= $_SESSION['user_name']; ?></a>
+            <?php } ?>
+            <a href="index.php">HOME</a>
+            <a href="scores.php">SCORE BOARD</a>
+            <a href="../Controller/logout.php">LOG OUT</a>
             <button class="" id="mutebtn"><i class="bi bi-volume-up-fill"></i></button>
         </div>
     </nav>
 
     <div class="container d-flex align-items-center justify-content-between mt-5">
-        <!-- Image on the left -->
         <div class="imgApi">
             <img src="" alt="Question Image" id="imgApi" class="color-image">
         </div>
 
-        <!-- Form and game data on the right -->
         <div class="form-container mx-4">
             <div class="single-Data">
                 <span>Level <span id="level-no" class="fw-bold">1</span></span>

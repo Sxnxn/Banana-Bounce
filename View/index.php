@@ -19,7 +19,7 @@ if (!$_SESSION['loggedIn']) {
     <link rel="stylesheet" href="../Static Assets/css/style.css" type="text/css">
     <script src="../Static Assets/js/bgAudio.js"></script>
 
-    <title>QUEEZY BUNCH</title>
+    <title>BANANA BOUNCE</title>
 
     <style>
         .video-container {
@@ -92,21 +92,20 @@ if (!$_SESSION['loggedIn']) {
     </div>
 
     <nav class="navbar">
-        <h1 class="logo">BANANA BOUNCE</h1>
+        <a href="index.php" class="logo">
+            <img src="../Static Assets/images/logo.png" alt="BANANA BOUNCE Logo" class="logo-img">
+        </a>
         <div class="links">
-            <!-- <a href="howtoplay.php">HOW TO PLAY</a> -->
             <?php if ($_SESSION['loggedIn']) { ?>
                 <a href="profile.php">Hi, <?= $_SESSION['user_name']; ?></a>
             <?php } ?>
-            <a href="scores.php"><i class="bi bi-123 custom-icon"></i></a>
-            <a href="../Controller/logout.php"><i class="bi bi-person-walking custom-icon"></i></a>
+            <a href="scores.php">SCORE BOARD</a>
+            <a href="../Controller/logout.php">LOG OUT</a>
             <button class="" id="mutebtn"><i class="bi bi-volume-up-fill"></i></button>
         </div>
     </nav>
     <div class="container">
         <div class="content">
-            <!-- <img id="quiz-image" src="../Static Assets/assets/images/icon quiz.png" alt=""> -->
-            <!-- <h1 class="indexTitle">Whooo! Let’s Get Bananas</h1> -->
             <?php if ($_SESSION['loggedIn']) { ?>
                 <a href="howtoplay.php" class="mt-4">
                     <img src="../Static Assets/assets/images/letsgobtn.png" alt="Start Playing" class="animated-image" />

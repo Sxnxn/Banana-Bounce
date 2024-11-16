@@ -16,7 +16,42 @@ include '../Controller/registerHandler.php';
     <link rel="stylesheet" href="../Static Assets/css/style.css" type="text/css">
     <script src="../Static Assets/js/bgAudio.js"></script>
 
-    <title>QUEEZY BUNCH</title>
+    <title>BANANA BOUNCE</title>
+
+    <style>
+        .video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 100%;
+            min-height: 100%;
+            object-fit: cover;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
 </head>
 
 <body>
@@ -30,10 +65,9 @@ include '../Controller/registerHandler.php';
 
     <div class="image-container">
         <nav class="navbar">
-            <h1 class="logo">BANANA BOUNCE</h1>
-            <div class="links">
-                <button class="" id="mutebtn"><i class="bi bi-volume-up-fill"></i></button>
-            </div>
+            <a href="index.php" class="logo">
+                <img src="../Static Assets/images/logo.png" alt="BANANA BOUNCE Logo" class="logo-img">
+            </a>
         </nav>
 
         <div class="container">
