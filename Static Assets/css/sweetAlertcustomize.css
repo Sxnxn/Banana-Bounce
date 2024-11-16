@@ -1,0 +1,56 @@
+.swal2-popup {
+    background-color: #ffd900 !important;  
+    border: 2px solid #423616; 
+    color: #423616; 
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37); 
+}
+
+.swal2-title {
+    color: #423616 !important; 
+    font-family: 'Cursive', sans-serif;  
+    font-weight: bold;
+}
+
+.swal2-html-container {
+    color: #584e15; 
+}
+
+.swal2-confirm {
+    background-color: #423616 !important;  
+    color: #ffd900 !important; 
+    border: 2px solid #ffd900;  
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.swal2-cancel {
+    background-color: #ffd900 !important;
+    color: #423616 !important;
+    border: 2px solid #423616;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+
+.swal2-icon.swal2-success {
+    border-color: #423616;
+    color: #423616;
+}
+
+.swal2-icon.swal2-error {
+    border-color: #423616;
+    color: #423616;
+}
+
+.swal2-icon.swal2-warning {
+    border-color: #423616;
+    color: #423616;
+}
+
+
+.swal2-confirm:hover,
+.swal2-cancel:hover {
+    background-color: #584e15 !important;
+    color: #ffd900 !important;
+    border-color: #ffd900;
+}
